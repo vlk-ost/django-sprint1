@@ -1,5 +1,4 @@
 from django.shortcuts import render  # type: ignore[import-untyped]
-from django.http import HttpResponseNotFound  # type: ignore[import-untyped]
 from django.http import HttpResponse  # type: ignore[import-untyped]
 from django.http import Http404
 
@@ -46,7 +45,9 @@ posts: list[dict] = [
                 укутывал их, чтобы не испортились от дождя.''',
     },
 ]
+
 POSTS_DICT = {post['id']: post for post in posts}
+
 
 def index(request) -> HttpResponse:
     """Главная страница."""
